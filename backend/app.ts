@@ -7,8 +7,21 @@ import ingestRoutes from "./routes/ingest";
 
 const app = express();
 
+const normalizeOrigin = (origin: string) => origin.replace(/\/+$/, "");
+const allowedOrigins = (process.env.CORS_ORIGIN || "*")
+    .split(",")
+    .map((origin) => normalizeOrigin(origin.trim()))
+    .filter(Boolean);
+
 app.use(cors({
-    origin: process.env.CORS_ORIGIN || "*",
+    origin(origin, callback) {
+        if (!origin || allowedOrigins.includes("*")) {
+            callback(null, true);
+            return;
+        }
+
+        callback(null, allowedOrigins.includes(normalizeOrigin(origin)));
+    },
 }));
 app.use(express.json());
 app.use(morgan("dev"));

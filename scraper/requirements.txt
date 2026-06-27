@@ -3,3 +3,4 @@ pymongo>=4.6.0
 python-dotenv>=1.0.0
 scikit-learn>=1.4.0
 trafilatura>=1.8.0
+lxml_html_clean>=0.4.0

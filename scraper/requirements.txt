@@ -1,0 +1,5 @@
+feedparser>=6.0.11
+pymongo>=4.6.0
+python-dotenv>=1.0.0
+scikit-learn>=1.4.0
+trafilatura>=1.8.0

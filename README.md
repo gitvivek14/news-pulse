@@ -181,17 +181,3 @@ python pipeline.py
 - The **Timeline** is designed to communicate activity windows, not just sorted dates.
 - The detail page focuses on explainability: model evidence, TF-IDF terms, source coverage, and equal-height article evidence cards.
 
-## Known Limitations
-
-- TF-IDF may miss related articles that use very different wording.
-- RSS feeds may include inconsistent summaries or media-style entries that are not full articles.
-- Article extraction quality depends on publisher page structure.
-- The threshold playground recomputes clusters in memory for analysis; saved clusters are rebuilt by the scraper.
-
-## Future Improvements
-
-- Sentence-BERT embeddings for semantic similarity.
-- HDBSCAN or agglomerative clustering for more robust story grouping.
-- Scheduled ingestion jobs.
-- User-configurable source lists.
-- Evaluation dashboard with precision/recall sampling for cluster quality.
